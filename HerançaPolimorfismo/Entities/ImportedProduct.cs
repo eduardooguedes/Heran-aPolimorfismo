@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace HerançaPolimorfismo
 {
@@ -12,11 +13,15 @@ namespace HerançaPolimorfismo
 			CustomsFee = customsFee;
 		}
 
-		public override void priceTag ()
+		public override string priceTag ()
 		{
-			base.priceTag () + " (Customs fee: $" + CustomsFee + ")";
+			return Name + " $" + totalPrice().ToString("F2", CultureInfo.InvariantCulture) + " (Customs fee: $" + CustomsFee.ToString("F2", CultureInfo.InvariantCulture) + ")";
 		}
 
+		public double totalPrice()
+		{
+			return Price + CustomsFee;
+		}
 	}
 }
 
