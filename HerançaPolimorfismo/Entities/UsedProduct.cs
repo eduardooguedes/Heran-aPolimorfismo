@@ -15,7 +15,7 @@ namespace HerançaPolimorfismo
 
 		public override string priceTag ()
 		{
-			return Name + "(used) $" + Price.ToString("F2", CultureInfo.InvariantCulture) + "Manufacture date: " + ManufactureDate;
+			return Name + " (used) $" + Price.ToString("F2", CultureInfo.InvariantCulture) + " Manufacture date: " + ManufactureDate.ToString("dd/MM/yyyy");
 		}
 	}
 }
